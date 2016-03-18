@@ -1,4 +1,4 @@
-package com.absontheweb.workshop.controller;
+package com.absontheweb.pizza5.controller;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.absontheweb.workshop.model.Pizza;
-import com.absontheweb.workshop.service.MenuService;
+import com.absontheweb.pizza5.model.Pizza;
+import com.absontheweb.pizza5.service.MenuService;
 
 @RestController
 @RequestMapping("/api")

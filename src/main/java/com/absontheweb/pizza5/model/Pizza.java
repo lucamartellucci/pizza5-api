@@ -1,4 +1,4 @@
-package com.absontheweb.workshop.model;
+package com.absontheweb.pizza5.model;
 
 import java.io.Serializable;
 import java.util.List;

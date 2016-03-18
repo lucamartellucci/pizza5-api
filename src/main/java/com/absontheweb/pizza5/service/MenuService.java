@@ -1,9 +1,9 @@
-package com.absontheweb.workshop.service;
+package com.absontheweb.pizza5.service;
 
 import java.util.List;
 
-import com.absontheweb.workshop.model.Pizza;
-import com.absontheweb.workshop.service.exception.MenuServiceException;
+import com.absontheweb.pizza5.model.Pizza;
+import com.absontheweb.pizza5.service.exception.MenuServiceException;
 
 public interface MenuService {
 	

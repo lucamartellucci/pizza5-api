@@ -1,4 +1,4 @@
-package com.absontheweb.workshop.controller;
+package com.absontheweb.pizza5.controller;
 
 import java.util.Arrays;
 import java.util.List;
@@ -13,13 +13,13 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-import com.absontheweb.workshop.service.MenuService;
+import com.absontheweb.pizza5.service.MenuService;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 @Configuration
-@ComponentScan ( "com.absontheweb.workshop.controller" )
+@ComponentScan ( "com.absontheweb.pizza5.controller" )
 @EnableWebMvc
 public class ControllerTestConfig extends WebMvcConfigurerAdapter {
 	

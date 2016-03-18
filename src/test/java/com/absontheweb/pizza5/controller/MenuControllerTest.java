@@ -1,4 +1,4 @@
-package com.absontheweb.workshop.controller;
+package com.absontheweb.pizza5.controller;
 
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -22,8 +22,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.absontheweb.workshop.model.Pizza;
-import com.absontheweb.workshop.service.MenuService;
+import com.absontheweb.pizza5.model.Pizza;
+import com.absontheweb.pizza5.service.MenuService;
 
 @RunWith ( SpringJUnit4ClassRunner.class )
 @ContextConfiguration ( classes = { ControllerTestConfig.class } )

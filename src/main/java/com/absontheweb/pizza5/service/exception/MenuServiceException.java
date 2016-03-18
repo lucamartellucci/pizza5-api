@@ -1,4 +1,4 @@
-package com.absontheweb.workshop.service.exception;
+package com.absontheweb.pizza5.service.exception;
 
 public class MenuServiceException extends Exception {
 

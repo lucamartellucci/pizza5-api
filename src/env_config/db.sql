@@ -1,6 +1,6 @@
-CREATE database workshop;
+CREATE database pizza5;
 
-use workshop;
+use pizza5;
 
 CREATE TABLE `pizza` (
   `id`              BIGINT(20)   NOT NULL AUTO_INCREMENT,

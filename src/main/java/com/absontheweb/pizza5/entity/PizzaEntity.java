@@ -1,4 +1,4 @@
-package com.absontheweb.workshop.entity;
+package com.absontheweb.pizza5.entity;
 
 import java.io.Serializable;
 import java.util.List;

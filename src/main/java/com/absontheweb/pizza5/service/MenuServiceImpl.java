@@ -1,4 +1,4 @@
-package com.absontheweb.workshop.service;
+package com.absontheweb.pizza5.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,11 +10,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.absontheweb.workshop.entity.IngredientEntity;
-import com.absontheweb.workshop.entity.PizzaEntity;
-import com.absontheweb.workshop.model.Pizza;
-import com.absontheweb.workshop.repository.PizzaRepository;
-import com.absontheweb.workshop.service.exception.MenuServiceException;
+import com.absontheweb.pizza5.entity.IngredientEntity;
+import com.absontheweb.pizza5.entity.PizzaEntity;
+import com.absontheweb.pizza5.model.Pizza;
+import com.absontheweb.pizza5.repository.PizzaRepository;
+import com.absontheweb.pizza5.service.exception.MenuServiceException;
 
 @Service
 @Transactional(readOnly=true, propagation=Propagation.REQUIRED)

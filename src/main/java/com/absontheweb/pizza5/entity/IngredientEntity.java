@@ -1,22 +1,26 @@
-package com.absontheweb.workshop.model;
+package com.absontheweb.pizza5.entity;
 
 import java.io.Serializable;
 
-public class Ingredient implements Serializable {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="ingredient")
+public class IngredientEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	public Ingredient(){
-		
-	}
-	
-	public Ingredient(Long id, String name) {
-		super();
-		this.id = id;
-		this.name = name;
-	}
-
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(nullable=false, name="id")
 	private Long id;
+	
+	@Column(nullable=false, name="name", length=255)
 	private String name;
 	
 	public Long getId() {
@@ -57,7 +61,7 @@ public class Ingredient implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Ingredient other = (Ingredient) obj;
+		IngredientEntity other = (IngredientEntity) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;

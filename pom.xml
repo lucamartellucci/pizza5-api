@@ -2,15 +2,20 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.absontheweb</groupId>
-	<artifactId>workshop</artifactId>
+	<artifactId>pizza5-api</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>workshop Maven Webapp</name>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>Pizza5 API</name>
 	<url>http://maven.apache.org</url>
 	
 	
 	<properties>
-		<container.deploy.dir>c:/dev_area/1_tools/apache-tomcat-8.0.32/webapps</container.deploy.dir>
+		<!-- 
+			IMPORTANT 
+			override this from command line when you build the project:
+			mvn clean package "-Dcontainer.deploy.dir=c:/dev_area/1_tools/apache-tomcat-8.0.32/webapps"
+		 -->
+		<container.deploy.dir>./deploy</container.deploy.dir>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 	</properties>
@@ -72,8 +77,9 @@
 
 	
 	<build>
-		<finalName>workshop</finalName>
+		<finalName>pizza5-api</finalName>
 		<plugins>
+			<!-- enforce JDK version -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
