@@ -10,6 +10,15 @@ Api REST per menu pizze e relativi ingredienti
 - [MySql 5.x.x]
 - [Tomcat 8.x.x]
 
+### Git setup
+Dopo aver clonato il repository git, eseguite i seguenti comandi (dalla cartella del progetto) per personalizzare l'utente con cui effettuate le commit:
+```sh
+$ git clone https://github.com/AdvancedBusinessSolutions/pizza5-api.git
+$ cd pizza5-api
+$ git config user.email "your-name@absontheweb.com"
+$ git config user.name "your-name"
+```
+
 ### Build
 Dal propmt della shell eseguire il comando:
 ```sh
