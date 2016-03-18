@@ -11,7 +11,7 @@ Api REST per menu pizze e relativi ingredienti
 - [Tomcat 8.x.x]
 
 ### Git setup
-Dopo aver clonato il repository git, eseguite i seguenti comandi (dalla cartella del progetto) per personalizzare l'utente con cui effettuate le commit:
+Per configurare correttamente il vostro repositori git locale eseguite i seguenti comandi:
 ```sh
 $ git clone https://github.com/AdvancedBusinessSolutions/pizza5-api.git
 $ cd pizza5-api
