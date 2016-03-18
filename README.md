@@ -15,6 +15,7 @@ Per configurare correttamente il vostro repositori git locale eseguite i seguent
 ```sh
 $ git clone https://github.com/AdvancedBusinessSolutions/pizza5-api.git
 $ cd pizza5-api
+$ git config --global push.default simple
 $ git config user.email "your-name@absontheweb.com"
 $ git config user.name "your-name"
 ```
