@@ -11,7 +11,7 @@ Api REST per menu pizze e relativi ingredienti
 - [Tomcat 8.x.x]
 
 ### Git setup
-Per configurare correttamente il vostro repositori git locale eseguite i seguenti comandi:
+Per configurare correttamente il vostro repo git locale eseguite i seguenti comandi:
 ```sh
 $ git clone https://github.com/AdvancedBusinessSolutions/pizza5-api.git
 $ cd pizza5-api
@@ -21,12 +21,12 @@ $ git config user.name "your-name"
 ```
 
 ### Build
-Dal propmt della shell eseguire il comando:
+Dal prompt della shell eseguire il comando:
 ```sh
 $ mvn clean package
 ```
 la build produrrà il file **pizza5-api.war** che di default sarà depositato nella cartella **./deploy**. 
-E' possibile modificare la cartella di deploy tramite un opzione maven:
+E' possibile modificare la cartella di deploy specificando la proprietà maven:
 
 ```sh
 $ mvn clean package "-Dcontainer.deploy.dir=/opt/apache-tomcat-8.0.32/webapps"
@@ -38,15 +38,15 @@ clean package "-Dcontainer.deploy.dir=/opt/apache-tomcat-8.0.32/webapps"
 ```
 
 ### MySql Setup
-Eseguire lo script sql presente nella directory del progetto **src/env_config/db.sql**. Dal prompt della shell usate il comando:
+Eseguire lo script sql **src/env_config/db.sql** presente nel progetto. Dal prompt della shell è possibile usare il comando:
 ```sh
 $ mysql -uroot -p < src/env_config/db.sql
 ```
 
 ### Tomcat Setup
-Per effettuare il setup di tomcat eseguire i seguenti passi:
-* Scaricare [Connector/J] e installarlo nella cartella TOMCAT_HOME/lib
-* Modificare il file TOMCAT_HOME//conf/context.xml e aggiungere la seguente configurazione all'interno del tag Context: 
+Per effettuare il setup di Tomcat eseguire i seguenti passi:
+* Scaricare [Connector/J] e copiarlo nella cartella TOMCAT_HOME/lib
+* Configurare il datasource per MySql modificando il file TOMCAT_HOME/conf/context.xml e aggiungere il seguente snippet xml all'interno del tag <Context>: 
 ```xml
 <Resource name="jdbc/tomcatDataSource" auth="Container" type="javax.sql.DataSource"
          username="root"
@@ -58,7 +58,7 @@ Per effettuare il setup di tomcat eseguire i seguenti passi:
          defaultTransactionIsolation="READ_COMMITTED"
          validationQuery="Select 1" />
 ```
-***Nota***: al momento la configurazione prevede l'utilizzo dell'utente MySql root configurato con password root.
+***Nota***: al momento la configurazione prevede l'utilizzo dell'utente root di MySql configurato con password root. Eventualmente modificare la configurazione del 
 
 [Connector/J]: <https://dev.mysql.com/downloads/connector/j/>
 [JDK 8]: <http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html>
