@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/AdvancedBusinessSolutions/pizza5-api.svg?branch=master)](https://travis-ci.org/AdvancedBusinessSolutions/pizza5-api)
+
 # pizza5-api
 Api REST per menu pizze e relativi ingredienti
 
