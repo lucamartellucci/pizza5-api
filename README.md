@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/AdvancedBusinessSolutions/pizza5-api.svg?branch=master)](https://travis-ci.org/AdvancedBusinessSolutions/pizza5-api)
+
 [![Coverage Status](https://coveralls.io/repos/github/AdvancedBusinessSolutions/pizza5-api/badge.svg?branch=master)](https://coveralls.io/github/AdvancedBusinessSolutions/pizza5-api?branch=master)
 
 # pizza5-api
