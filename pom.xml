@@ -18,6 +18,8 @@
 		<container.deploy.dir>./deploy</container.deploy.dir>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
+		<jacoco.plugin.version>0.7.5.201505241946</jacoco.plugin.version>
+		<coveralls.plugin.version>4.1.0</coveralls.plugin.version>
 	</properties>
 	
 	<parent>
@@ -87,6 +89,29 @@
 					<source>${java.version}</source>
 					<target>${java.version}</target>
 					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			
+			<!-- Testing coverage reports -->
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>${jacoco.plugin.version}</version>
+				<executions>
+					<execution>
+						<id>prepare-agent</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.eluder.coveralls</groupId>
+				<artifactId>coveralls-maven-plugin</artifactId>
+				<version>${coveralls.plugin.version}</version>
+				<configuration>
+					<repoToken></repoToken>
 				</configuration>
 			</plugin>
 
