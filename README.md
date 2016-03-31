@@ -61,7 +61,13 @@ Per effettuare il setup di Tomcat eseguire i seguenti passi:
          defaultTransactionIsolation="READ_COMMITTED"
          validationQuery="Select 1" />
 ```
-***Nota***: al momento la configurazione prevede l'utilizzo dell'utente root di MySql configurato con password root. Eventualmente modificare la configurazione del 
+***Nota***: al momento la configurazione prevede l'utilizzo dell'utente root di MySql configurato con password root. Eventualmente modificare la configurazione del datasource. 
+
+### Test 
+Una volta effettuata la build e dopo aver avviato Tomcat, verificate che l'applicazione funzioni correttamente navigando al seguente URL: 
+
+<http://localhost:8080/pizza5-api/api/menu>
+
 
 [Connector/J]: <https://dev.mysql.com/downloads/connector/j/>
 [JDK 8]: <http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html>
