@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/AdvancedBusinessSolutions/pizza5-api.svg?branch=master)](https://travis-ci.org/AdvancedBusinessSolutions/pizza5-api)
 [![Coverage Status](https://coveralls.io/repos/github/AdvancedBusinessSolutions/pizza5-api/badge.svg?branch=master&service=github)](https://coveralls.io/github/AdvancedBusinessSolutions/pizza5-api?branch=master)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/7dd4531f5d13418cb5a5c2b54890f27a)](https://www.codacy.com/app/gianluca-aiello/pizza5-api)
 
 # pizza5-api
 Api REST per menu pizze e relativi ingredienti
