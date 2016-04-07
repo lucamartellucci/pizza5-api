@@ -21,7 +21,7 @@ import com.absontheweb.pizza5.service.exception.MenuServiceException;
 public class MenuServiceImpl implements MenuService {
 	
 	@Autowired
-	PizzaRepository pizzaRepo;
+	private PizzaRepository pizzaRepo;
 	
 	@Override
 	public List<Pizza> getMenu() throws MenuServiceException {

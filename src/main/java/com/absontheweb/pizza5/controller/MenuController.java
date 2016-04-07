@@ -25,15 +25,11 @@ public class MenuController {
 			method = RequestMethod.GET, 
 			produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Pizza>> getMenu() throws Exception {
-		try {
 			
 			return ResponseEntity.ok()
 					.header("Access-Control-Allow-Origin", "*")
 					.body(menuService.getMenu());
 			
-		} catch (Exception e) {
-			throw new Exception("Unable to load the menu", e);
-		}
 	}
 	
 	
@@ -41,15 +37,10 @@ public class MenuController {
 			method = RequestMethod.GET, 
 			produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Pizza> getPizza(@PathVariable(value="id") Long id) throws Exception {
-		try {
 
 			return ResponseEntity.ok()
 					.header("Access-Control-Allow-Origin", "*")
 					.body(menuService.getPizza(id));
-
-		} catch (Exception e) {
-			throw new Exception("Unable to load the menu", e);
-		}
 	}
 	
 }
