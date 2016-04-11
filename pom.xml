@@ -15,7 +15,7 @@
 			override this from command line when you build the project:
 			mvn clean package "-Dcontainer.deploy.dir=c:/dev_area/1_tools/apache-tomcat-8.0.32/webapps"
 		 -->
-		<container.deploy.dir>./deploy</container.deploy.dir>
+		<container.deploy.dir>./build</container.deploy.dir>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 		<jacoco.plugin.version>0.7.6.201602180812</jacoco.plugin.version>
@@ -72,8 +72,41 @@
 			<version>2.9.0</version>
 			<scope>test</scope>
 		</dependency>
+	
+		<!-- Mandatory dependencies for using Spock -->
+		<dependency>
+			<groupId>org.spockframework</groupId>
+			<artifactId>spock-core</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency> <!-- enables mocking of classes (in addition to interfaces) -->
+			<groupId>cglib</groupId>
+			<artifactId>cglib-nodep</artifactId>
+			<version>3.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency> <!-- enables mocking of classes without default constructor (together with 
+				CGLIB) -->
+			<groupId>org.objenesis</groupId>
+			<artifactId>objenesis</artifactId>
+			<version>2.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+	        <groupId>com.athaydes</groupId>
+	        <artifactId>spock-reports</artifactId>
+	        <version>1.2.7</version>
+	        <scope>test</scope>
+	    </dependency>
 	</dependencies>
 	
+	<repositories>
+		<repository>
+			<id>jcenter</id>
+			<name>JCenter Repo</name>
+			<url>http://jcenter.bintray.com</url>
+		</repository>
+	</repositories>
 
 	
 	<build>
@@ -111,6 +144,35 @@
 				<configuration>
 					<repoToken></repoToken>
 				</configuration>
+					</plugin>
+		
+			<plugin>
+				<!-- The gmavenplus plugin is used to compile Groovy code. To learn more 
+					about this plugin, visit https://github.com/groovy/GMavenPlus/wiki -->
+				<groupId>org.codehaus.gmavenplus</groupId>
+				<artifactId>gmavenplus-plugin</artifactId>
+				<version>1.4</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+							<goal>testCompile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- Only required if names of spec classes don't match default Surefire 
+				patterns (`*Test` etc.) -->
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<useFile>false</useFile>
+					<includes>
+						<include>**/*Spec.java</include>
+						<include>**/*Test.java</include>
+					</includes>
+				</configuration>
 			</plugin>
 
 			<!-- DEPLOY WAR -->
@@ -143,5 +205,41 @@
 			</plugin>
 
 		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.codehaus.gmavenplus
+										</groupId>
+										<artifactId>
+											gmavenplus-plugin
+										</artifactId>
+										<versionRange>
+											[1.4,)
+										</versionRange>
+										<goals>
+											<goal>compile</goal>
+											<goal>testCompile</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
 </project>

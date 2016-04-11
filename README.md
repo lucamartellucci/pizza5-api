@@ -30,7 +30,7 @@ Dal prompt della shell eseguire il comando:
 ```sh
 $ mvn clean package
 ```
-la build produrrà il file **pizza5-api.war** che di default sarà depositato nella cartella **./deploy**. 
+la build produrrà il file **pizza5-api.war** che di default sarà depositato nella cartella **./build**. 
 E' possibile modificare la cartella di deploy specificando la proprietà maven:
 
 ```sh
