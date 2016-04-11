@@ -65,7 +65,7 @@ class MenuControllerSpec extends Specification {
         
         then: 'a Pizza is returned'
         
-        	1 * menuService.getPizza(id*2) >> margherita
+        	1 * menuService.getPizza(id) >> margherita
         	
         	println response
 	    	response.status == OK.value()
