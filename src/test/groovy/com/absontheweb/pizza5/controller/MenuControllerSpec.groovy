@@ -35,23 +35,27 @@ class MenuControllerSpec extends Specification {
         
         	1 * menuService.getMenu() >> [margherita, napoli]
         	
-        	println response
 	    	response.status == OK.value()
 	    	response.contentType == 'application/json'
 	    	
 	    	def menu = new JsonSlurper().parseText(response.contentAsString)
 	    	menu.size() == 2
-	    	menu[0].id == 1
-	    	menu[0].name == 'Margherita'
-	    	menu[0].description == 'Classico senzatempo'
-	    	menu[0].ingredients.size() == 3
-	    	menu[0].ingredients.containsAll(['farina','pomodoro','mozzarella'])
+	    	with(menu[0]){
+	    		id == 1
+		    	name == 'Margherita'
+		    	description == 'Classico senzatempo'
+		    	ingredients.size() == 3
+		    	ingredients.containsAll(['farina','pomodoro','mozzarella'])
+	    	}
 	    	
-	   		menu[1].id == 2
-	    	menu[1].name == 'Napoli'
-	    	menu[1].description == 'Semplice e saporita'
-	    	menu[1].ingredients.size() == 4
-	    	menu[1].ingredients.containsAll(['farina','pomodoro','mozzarella','acciughe'])
+	    	with(menu[1]){
+	    		id == 2
+		    	name == 'Napoli'
+		    	description == 'Semplice e saporita'
+		    	ingredients.size() == 4
+		    	ingredients.containsAll(['farina','pomodoro','mozzarella','acciughe'])
+	    	}
+	   		
     } 
     
     def "get the details of a Pizza"() {
@@ -64,20 +68,22 @@ class MenuControllerSpec extends Specification {
         	
         
         then: 'a Pizza is returned'
-        
+        	// program and verify the mock in a signle line
         	1 * menuService.getPizza(id) >> margherita
         	
-        	println response
+        	// verify with assertions
 	    	response.status == OK.value()
 	    	response.contentType == 'application/json'
 	        
 	        def pizza = new JsonSlurper().parseText(response.contentAsString)        
-	    	pizza.id == 1
-	    	pizza.name == 'Margherita'
-	    	pizza.price == 4.5
-	    	pizza.description == 'Classico senzatempo'
-			pizza.ingredients.size() == 3
-	    	pizza.ingredients.containsAll(['farina','pomodoro','mozzarella'])
+	        with(pizza){
+	        	id == 1
+		    	name == 'Margherita'
+		    	price == 4.5
+		    	description == 'Classico senzatempo'
+				ingredients.size() == 3
+		    	ingredients.containsAll(['farina','pomodoro','mozzarella'])
+	        }
     }
 
 }
