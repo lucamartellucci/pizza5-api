@@ -23,6 +23,15 @@ public class IngredientEntity implements Serializable {
 	@Column(nullable=false, name="name", length=255)
 	private String name;
 	
+	public IngredientEntity() {
+		
+	}
+	
+	public IngredientEntity(Long id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
 	public Long getId() {
 		return id;
 	}

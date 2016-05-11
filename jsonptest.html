@@ -1,0 +1,16 @@
+<html>
+ <head>
+   <script>
+     function cazzo(data) {  
+		data.forEach(function(pizza){
+				console.log(pizza.name);
+		});
+     }
+   </script>
+  </head>
+  <body>
+    
+    <script src="http://localhost:8080/pizza5-api/api/menu?callback=cazzo" type="application/javascript"></script>
+	
+  </body>
+</html>

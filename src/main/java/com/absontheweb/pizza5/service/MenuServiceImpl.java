@@ -34,7 +34,7 @@ public class MenuServiceImpl implements MenuService {
 		return toPizza(pizzaRepo.getOne(id));
 	}
 
-	private List<Pizza> toPizzas(List<PizzaEntity> pizzaEntities) {
+	protected List<Pizza> toPizzas(List<PizzaEntity> pizzaEntities) {
 		List<Pizza> pizzas = new ArrayList<Pizza>();
 		for (PizzaEntity pizzaEntity : pizzaEntities) {
 			pizzas.add(toPizza(pizzaEntity));
@@ -42,7 +42,7 @@ public class MenuServiceImpl implements MenuService {
 		return pizzas;
 	}
 
-	private Pizza toPizza(PizzaEntity pizzaEntity) {
+	protected Pizza toPizza(PizzaEntity pizzaEntity) {
 		Pizza pizza = new Pizza();
 		BeanUtils.copyProperties(pizzaEntity, pizza, "ingredients");
 		

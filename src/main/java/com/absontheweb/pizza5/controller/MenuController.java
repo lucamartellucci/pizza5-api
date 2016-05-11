@@ -27,7 +27,6 @@ public class MenuController {
 	public ResponseEntity<List<Pizza>> getMenu() throws Exception {
 			
 			return ResponseEntity.ok()
-					.header("Access-Control-Allow-Origin", "*")
 					.body(menuService.getMenu());
 			
 	}
@@ -39,7 +38,6 @@ public class MenuController {
 	public ResponseEntity<Pizza> getPizza(@PathVariable(value="id") Long id) throws Exception {
 
 			return ResponseEntity.ok()
-					.header("Access-Control-Allow-Origin", "*")
 					.body(menuService.getPizza(id));
 	}
 	
